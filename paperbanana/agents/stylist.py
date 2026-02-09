@@ -79,32 +79,30 @@ class StylistAgent(BaseAgent):
     def _default_guidelines(self) -> str:
         """Return default aesthetic guidelines if none provided."""
         return """
-## Academic Illustration Style Guidelines
+## Excalidraw-Style Technical Diagram Guidelines
+
+### Drawing Feel
+- Use an Excalidraw-like hand-drawn technical style
+- Slightly rough strokes, simple shapes, clean white background
+- Flat fills only; no gradients, no 3D rendering, no photorealism
 
 ### Color Philosophy
-- Use soft, muted, pastel tones — never fully saturated primaries
-- Limit to 3-5 primary hues per diagram
-- Each distinct color should map to a distinct concept or phase
-- Use darker shades of the same hue for borders (not black)
-- Describe colors in natural language (e.g., "soft sky blue", "warm peach")
-- NEVER use hex codes, pixel dimensions, or point sizes in the description
+- Use soft, muted tones with limited palette (3-5 main hues)
+- Keep fills light for readability and use darker matching borders
+- Describe colors in natural language only (no hex codes)
 
 ### Typography
-- Clean sans-serif fonts for all labels
-- Visual hierarchy through size and weight: larger bold for titles,
-  medium bold for components, smaller for annotations
+- Clean sans-serif labels with high legibility
+- Keep wording concise and unambiguous
 - All text must be clear, readable English
 
-### Layout
-- Consistent spacing between elements
-- Clear flow direction (left-to-right or top-to-bottom)
-- Balanced composition with visual weight evenly distributed
-- Use whitespace intentionally to separate phases and groups
+### Layout and Flow
+- One clear flow direction (left-to-right or top-to-bottom)
+- Consistent spacing and alignment on an implicit grid
+- Use grouped containers for phases; avoid clutter
 
-### Visual Elements
-- Rounded rectangles with soft pastel fills for components
-- Solid arrows with dark gray color for primary data flow
-- Dashed arrows for optional or conditional connections
-- Semi-transparent colored backgrounds for grouping regions
-- No gradients, no 3D effects, no drop shadows, no decorative borders
+### Connectors and Symbols
+- Clear arrows with consistent style and directionality
+- Dashed connectors only for optional/auxiliary relations
+- Simple iconography only when semantically necessary
 """

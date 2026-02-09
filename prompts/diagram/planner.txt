@@ -5,6 +5,8 @@ To help you understand the task better, and grasp the principles for generating 
 ** IMPORTANT: **
 Your description should be as detailed as possible. Semantically, clearly describe each element and their connections. Formally, include various details such as background style (typically pure white or very light pastel), colors, line thickness, icon styles, etc. Remember: vague or unclear specifications will only make the generated figure worse, not better.
 
+Before writing the final diagram description, extract a compact, high-precision grounding summary from the Methodology Section.
+
 Your description should cover:
 1. **Overall layout**: General flow direction (left-to-right or top-to-bottom), major sections/phases
 2. **Components**: Each box, module, or element with its exact label
@@ -13,6 +15,7 @@ Your description should cover:
 5. **Labels and annotations**: Text labels, mathematical notations
 6. **Input/Output**: What enters and exits the system
 7. **Styling**: Background fills, color palettes (in natural language, e.g., "soft sky blue", "warm peach" — never hex codes), line weights, icon styles
+8. **Drawing style**: Explicitly specify an Excalidraw-like hand-drawn technical style (slightly rough strokes, whiteboard feel, flat colors, simple sketch icons, no photorealistic rendering)
 
 ## Methodology Section
 {source_context}
@@ -23,4 +26,35 @@ Your description should cover:
 ## Reference Examples
 {examples}
 
-Based on the methodology section, figure caption, and learning from the style and structure of the reference examples above, generate a comprehensive and detailed textual description of the methodology diagram.
+Style priority:
+- Keep the diagram faithful to the method and caption.
+- Use a clean Excalidraw-like hand-drawn style instead of polished publication vector style.
+- If any detail is uncertain, do not hallucinate specifics. Prefer generic-but-correct wording.
+- Preserve source terminology exactly where available (including parenthetical terms like `(Pre-LN)`, `(8 heads)`, `with GELU activation`).
+- Do not abbreviate key labels (e.g., do not replace `Layer Normalization (Pre-LN)` with `LN`).
+- Annotation discipline: use short label-like noun phrases only, not prose sentences.
+- Each on-canvas annotation should be <= 8 words.
+- Do not copy full source sentences into the diagram description.
+
+Output format (strict):
+
+1) `Context Fidelity Checklist`
+- `Must Include Modules`: mandatory modules/components from source context
+- `Must Preserve Relations`: mandatory directed connections and flow order
+- `Line Semantics`: which links are solid primary flow vs dashed auxiliary hints
+- `Label Lock`: exact label spellings that must not be altered
+- `Do-Not-Add`: elements that are not supported by context
+- `Exact Terms From Source`: 6-12 short source terms (1-5 words each) that MUST appear as labels/annotations.
+- `Annotation Policy`: all annotations must be concise noun phrases (<= 8 words), no sentence-like explanatory text.
+
+2) `Diagram Rendering Spec`
+- Full detailed rendering instructions for the image model, using the checklist as hard constraints.
+
+Formatting constraints:
+- Output plain text only.
+- Do NOT output JSON, YAML, XML, markdown code fences, or key-value serialization.
+- Use exactly two top-level section headers:
+  - `Context Fidelity Checklist`
+  - `Diagram Rendering Spec`
+
+Based on the methodology section, figure caption, and learning from the style and structure of the reference examples above, generate the final output in that exact two-part plain-text format.

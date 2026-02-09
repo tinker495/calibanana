@@ -12,6 +12,10 @@ You are also provided with the 'Detailed Description' corresponding to the curre
 1. Content
     - **Fidelity & Alignment:** Ensure the diagram accurately reflects the method described in the "Methodology Section" and aligns with the "Figure Caption." Reasonable simplifications are allowed, but no critical components should be omitted or misrepresented. Also, the diagram should not contain any hallucinated content. Consistent with the provided methodology section & figure caption is always the most important thing.
     - **Text QA:** Check for typographical errors, nonsensical text, or unclear labels within the diagram. Flag any garbled, misspelled, or non-English text. Flag any hex codes, pixel dimensions, or CSS values rendered as text. Suggest specific corrections.
+    - **Label Lock:** If a component label appears in the description/context, verify exact spelling and wording in the image. Flag abbreviations or altered spellings as errors.
+    - **Connector Semantics:** Verify that primary flow arrows are solid and auxiliary hints are dashed when specified. Flag any solid/dashed mismatch.
+    - **Terminology Preservation:** If source includes explicit terms (e.g., `Sinusoidal Positional Encodings`, `Layer Normalization (Pre-LN)`, `with GELU activation`, `Top-k positions`), check that they are preserved without simplification.
+    - **Annotation Brevity QA:** Flag sentence-like annotations or long explanatory text blocks. Prefer concise labels (<= 8 words each).
     - **Validation of Examples:** Verify the accuracy of illustrative examples. If the diagram includes specific examples to aid understanding (e.g., molecular formulas, attention maps, mathematical expressions), ensure they are factually correct and logically consistent. If an example is incorrect, provide the correct version.
     - **Caption Exclusion:** Ensure the figure caption text (e.g., "Figure 1: Overview...") is **not** included within the image visual itself. The caption should remain separate.
 2. Presentation
